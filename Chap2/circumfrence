@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+$radius = <STDIN>;
+if ($radius >= 0)
+{
+	$circum = (2 * 3.141592654) * $radius;
+}
+else
+{
+	$circum = 0
+}
+print "$circum\n"

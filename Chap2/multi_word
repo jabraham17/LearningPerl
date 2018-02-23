@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+
+$word = <STDIN>;
+$num = <STDIN>;
+
+$multi = $word x $num;
+
+print "$multi\n"

@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+$num1 = <STDIN>;
+$num2 = <STDIN>;
+
+$sum = $num1 * $num2;
+
+print "$sum\n"
+
