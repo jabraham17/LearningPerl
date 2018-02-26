@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+use 5.010;
+
+sub greet {
+	my($name) = @_;
+	state @prev;
+	if (@prev) {
+		print "Hi $name! I've seen @prev\n";
+	}
+	else {
+		print "Hi $name! You are the first here\n";
+	}
+	push @prev, $name;
+}
+
+&greet("Fred");
+&greet("Barney");
+&greet("Betty");
+
