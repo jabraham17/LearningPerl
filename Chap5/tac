@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+@lines;
+while (<>) {
+	unshift @lines, $_;
+}
+
+print @lines; 
