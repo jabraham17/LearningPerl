@@ -1,0 +1,10 @@
+#!/usr/bin/perl
+
+while (<>) {
+	chomp;
+	$words{$_} += 1;
+}
+
+while (($key, $value) = each %words) {
+	print "The word '$key' appears $value times\n";
+}

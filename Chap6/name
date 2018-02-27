@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+%names = ( "fred" => "flinstone", "barney" => "rubble", "wilma" => "flintstone" );
+
+print "Enter name: ";
+
+chomp($input = <STDIN>);
+
+print "The name is $names{$input}\n";
