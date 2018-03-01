@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+$in = shift @ARGV;
+die "Needs one file argument" if !$in;
+
+$out = $in.".out";
+
+open IN, "<", $in or die;
+open OUT, ">", $out or die;
+
+
+while(<IN>) {
+	s/fred/Larry/gi;
+	print OUT $_;
+}

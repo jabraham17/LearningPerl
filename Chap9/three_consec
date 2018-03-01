@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+$what = 'hello';
+
+chomp($line = <>);
+
+print "The line is $line\n";
+
+print "The match is $1\n" if $line =~ m/($what$what$what)/;
