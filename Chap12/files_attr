@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+sub print_file_type {
+	my($file) = @_;
+	unless (-e $file) {
+		print "$file does not exist"."\n";
+		return;
+	}
+	print "$file is readable\n" if -r $_;
+	print "$file is writable\n" if -w _;
+	print "$file is exectuable\n" if -x _;
+	print "$file exists\n" unless -r -w -x _;
+}
+
+for (@ARGV) {
+	&print_file_type($_);
+}
+
