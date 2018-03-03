@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+$dir = shift @ARGV;
+
+chdir $dir or die "Could not change directory";
+
+for (sort glob '*') {
+	print "$_\n";
+}
