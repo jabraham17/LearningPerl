@@ -1,0 +1,8 @@
+#!/usr/bin/perl
+
+for (1..100) {
+	print "$_ ";
+	print "fizz" if $_ % 3 == 0;
+	print "buzz" if $_ % 5 == 0;
+	print "\n";
+}
