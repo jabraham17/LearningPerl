@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+
+for (@ARGV) {
+	push @flags, "r" if -r $_;
+	push @flags, "w" if -w _;
+	push @flags, "x" if -x _;
+	print "$_: ".(join " ", @flags)."\n";
+	@flags = ();
+}

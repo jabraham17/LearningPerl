@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+
+sub divisors {
+	my $number = shift;
+
+	my @divisors = ();
+	for (2..($number / 2)) {
+		push @divisors, $_ unless $number % $_;
+	}
+	@divisors;
+}
+
+$num = shift @ARGV or die "Supply number";
+@divs = &divisors($num);
+if (@divs) {
+	printf "primes: ".(join ",", @divs)."\n";
+}
+else {
+	print "prime\n";
+}

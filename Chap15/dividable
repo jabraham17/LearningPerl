@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use feature "switch";
+
+$num = shift @ARGV or die "must supply number";
+
+for ($num) {
+	when (not $_ % 3) { print "Fizz"; continue }
+	when (not $_ % 5) { print "Bin"; continue }
+	when (not $_ % 7) { print "Sausage" }
+}
+print "\n";
