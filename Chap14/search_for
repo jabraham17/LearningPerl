@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+$search_for = shift @ARGV or die "Must supply paramter to search for";
+
+while(<DATA>) {
+	$loc = -1;
+	print "Found at index $loc\n" while ($loc = index $_, $search_for, $loc + 1) != -1;
+}
+
+__DATA__
+Hello how are you today i am doing ok.

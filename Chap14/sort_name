@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+%last_name = qw/fred flinstone Wilma Flinstone Barney Rubble 
+		betty rubble Bamm-Bamm Rubble PEBBLES FLINSTONE/;
+
+sub by_name {
+	"\L$last_name{$a}" cmp "\L$last_name{$b}"
+			or
+	"\L$a" cmp "\L$b";
+}
+@sorted = sort by_name keys %last_name;
+
+printf (("%20s\n" x @sorted), @sorted);
+
