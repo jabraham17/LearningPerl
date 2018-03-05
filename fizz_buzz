@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-for (1..100) {
+for (1..(shift @ARGV or die "Missing arg")) {
 	print "$_ ";
 	print "fizz" if $_ % 3 == 0;
 	print "buzz" if $_ % 5 == 0;
