@@ -1,0 +1,5 @@
+#!/usr/bin/perl
+
+@date = split ' ', `date`;
+$day = shift @date;
+print "$day\n";
