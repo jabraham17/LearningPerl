@@ -1,0 +1,74 @@
+#!/usr/bin/perl
+
+@messages = ("HEIZO!!!\n",
+	"Jacob has the biggest Java\n",
+	"If Heizo doesn't do it\nIt doesnt get done\n",
+	"Food decreases productivity\n",
+	"Serenity Now\n",
+	"DPS\nDabs per Second\n",
+	"I'm done dealing with these idiots\n");
+
+$mes_index = int( rand @messages );
+@message = split '\n', $messages[$mes_index];
+
+$line_length = &max_line_len(@message);
+
+print (" ".("_" x ($line_length + 2))."\n");
+
+$num_message = @message;
+$index = 0;
+for (@message) {
+	if ($num_message == 1) {
+		print "< $_ >\n";
+	}
+	else {
+		if ($index == 0) {
+			printf "/ %-*s \\\n", $line_length, $_;
+		}
+		elsif ($index == ($num_message - 1)) {
+			printf "\\ %-*s /\n", $line_length, $_;
+		}
+		else {
+			printf "| %-*s |\n", $line_length, $_;
+		}
+	}
+	$index++;
+}
+print (" ".("-" x ($line_length + 2))."\n");
+
+$/ = undef;
+$heiso = <DATA>;
+print $heiso;
+
+
+sub max_line_len {
+	$max = shift @_;
+	$len = length $max;
+	for (@_) {
+		$new_len = length $_;
+		($max, $len) = ($_, $new_len) if $new_len > $len;
+	}
+	$len;
+}
+
+
+__DATA__
+                       __________________
+                      /                  \
+                     /                    \
+                    /                      \
+                __ |   _____        _____   | __
+               /  \|  /     \      /     \  |/  \
+               |  ||  |  O  |      |  O  |  ||  |
+               \__/|  \_____/      \_____/  |\__/
+                   |           ||           |
+                   |          /  \          |
+                   |         / || \         |
+                   |                        | 
+                   |                        | 
+                   |     ______________     | 
+                   \                        /
+                    \                      /
+                     \                    /
+                      \                  /
+                       \________________/
