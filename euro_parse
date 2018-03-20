@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+$^I = '';
+
+while(<>) {
+	s%^\d+/\d+/\d+%%;
+	s%^\s+$%%;
+	print;
+}
+
+print "There are $. quotes\n";
